@@ -1,94 +1,124 @@
-###🏀 Basketball Shot Analyzer
-A computer vision + machine learning project that analyzes basketball shots from video and predicts whether the shot will go in.
-🚀 Features
-Detects basketball using YOLOv11
-Tracks ball position frame-by-frame
-Calculates motion features:
-Position (x, y)
-Velocity (vx, vy)
-Distance from rim
-Speed
-Logs data into a CSV file
-Uses a PyTorch model to predict shot success
-Displays predictions in real-time on video
+# 🏀 Basketball Shot Analyzer
 
-### 🧠 How It Works
-Object Detection
-Uses YOLO to detect the basketball in each frame
-Tracking + Physics
+A computer vision and machine learning project that analyzes basketball shots from video and predicts whether a shot will be made or missed in real time.
+
+## 🚀 Features
+
+* Detects basketballs using **YOLOv11**
+* Tracks ball position frame-by-frame
+* Calculates motion features:
+
+  * Position `(x, y)`
+  * Velocity `(vx, vy)`
+  * Speed
+  * Distance from rim
+* Logs shot data into a CSV dataset
+* Uses a **PyTorch neural network** to predict shot success
+* Displays predictions in real time on video
+
+## 🧠 How It Works
+
+### 1. Object Detection
+
+Uses YOLOv11 to detect the basketball in each frame.
+
+### 2. Tracking & Physics
+
 Computes:
-Δx, Δy
-Velocity
-Distance to rim
-Detects when ball crosses rim plane
-Data Collection
-Stores frame-by-frame data into Final_Shots.csv
-Machine Learning
-Trains a neural network on shot data
-Outputs probability of shot being made
 
-### 📁 Project Structure
+* Δx, Δy
+* Velocity `(vx, vy)`
+* Speed
+* Distance to rim
+
+Tracks the ball trajectory throughout the shot.
+
+### 3. Data Collection
+
+Stores frame-by-frame shot data in:
+
+```bash
+Final_Shots.csv
+```
+
+### 4. Machine Learning
+
+Trains a PyTorch neural network on collected shot data and outputs the probability that a shot will be made.
+
+## 📂 Project Structure
+
+```text
 Basketball-Shot-Analyzer/
-│── main.py                # YOLO + OpenCV tracking
-│── model.py               # PyTorch model
-│── Final_Shots.csv        # Dataset
-│── videos/                # Input videos
-│── README.md
+│
+├── main.py                # YOLO + OpenCV tracking
+├── model.py               # PyTorch model
+├── Final_Shots.csv        # Dataset
+├── videos/                # Input videos
+└── README.md
+```
 
-### 🛠️ Tech Stack
-Python
-OpenCV
-Ultralytics YOLOv11
-PyTorch
-NumPy / Pandas
+## 🛠️ Tech Stack
 
-### ⚙️ Installation
-pip install ultralytics opencv-python torch pandas
+* Python
+* OpenCV
+* Ultralytics YOLOv11
+* PyTorch
+* NumPy
+* Pandas
 
-### ▶️ Usage
-Place your video file:
+## ⚙️ Installation
+
+```bash
+pip install ultralytics opencv-python torch pandas numpy
+```
+
+## ▶️ Usage
+
+### Place your video file
+
+```text
 vid.mp4
-Run detection:
+```
+
+### Run detection and tracking
+
+```bash
 python main.py
-Train model:
+```
+
+### Train the prediction model
+
+```bash
 python model.py
+```
 
-### 📊 Example Features (CSV)
-frame
-ball_x
-ball_y
-vx
-vy
-speed
-label
-12
-320
-210
-5
--3
-5.8
-1
+## 📊 Example Features (CSV)
 
-label = 1 → shot made
-label = 0 → shot missed
+| frame | ball_x | ball_y | vx | vy | speed | label |
+| ----- | ------ | ------ | -- | -- | ----- | ----- |
+| 12    | 320    | 210    | 5  | -3 | 5.8   | 1     |
 
-🎯 Future Improvements
-Improve ball detection accuracy
-Use multiple videos for better training
-Add trajectory prediction visualization
-Real-time shot feedback system
-Train more advanced models (LSTM / sequence-based)
+* `label = 1` → Shot Made ✅
+* `label = 0` → Shot Missed ❌
 
-💡 Inspiration
-This project combines computer vision + physics + machine learning to simulate how real analytics systems track and predict basketball shots.
-
-🧑‍💻 Author
-Built by Aurick Anwar
-
-## 🚀 Demo
+## 🎥 Demo
 
 ![Preview](https://img.youtube.com/vi/B-A5uHzQIgI/0.jpg)
 
 ▶️ Full Demo: https://www.youtube.com/watch?v=B-A5uHzQIgI
 
+## 🔮 Future Improvements
 
+* Improve ball detection accuracy
+* Use multiple videos for training
+* Add trajectory prediction visualization
+* Real-time shot feedback system
+* Train more advanced models (LSTM / Transformers)
+
+## 💡 Inspiration
+
+This project combines computer vision, physics, and machine learning to simulate how modern basketball analytics systems track and predict shot outcomes.
+
+## 👨‍💻 Author
+
+**Aurick Anwar**
