@@ -1,4 +1,4 @@
-🏀 Basketball Shot Analyzer
+###🏀 Basketball Shot Analyzer
 A computer vision + machine learning project that analyzes basketball shots from video and predicts whether the shot will go in.
 🚀 Features
 Detects basketball using YOLOv11
@@ -12,7 +12,7 @@ Logs data into a CSV file
 Uses a PyTorch model to predict shot success
 Displays predictions in real-time on video
 
-🧠 How It Works
+### 🧠 How It Works
 Object Detection
 Uses YOLO to detect the basketball in each frame
 Tracking + Physics
@@ -27,7 +27,7 @@ Machine Learning
 Trains a neural network on shot data
 Outputs probability of shot being made
 
-📁 Project Structure
+### 📁 Project Structure
 Basketball-Shot-Analyzer/
 │── main.py                # YOLO + OpenCV tracking
 │── model.py               # PyTorch model
@@ -35,17 +35,17 @@ Basketball-Shot-Analyzer/
 │── videos/                # Input videos
 │── README.md
 
-🛠️ Tech Stack
+### 🛠️ Tech Stack
 Python
 OpenCV
 Ultralytics YOLOv11
 PyTorch
 NumPy / Pandas
 
-⚙️ Installation
+### ⚙️ Installation
 pip install ultralytics opencv-python torch pandas
 
-▶️ Usage
+### ▶️ Usage
 Place your video file:
 vid.mp4
 Run detection:
@@ -53,7 +53,7 @@ python main.py
 Train model:
 python model.py
 
-📊 Example Features (CSV)
+### 📊 Example Features (CSV)
 frame
 ball_x
 ball_y
